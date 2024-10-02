@@ -1,0 +1,125 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+  }
+ footer {
+    background-color: #282828;
+    color: white;
+    text-align: center;
+    padding: 20px;
+  }
+  .concerts-section {
+    padding: 30px;
+    text-align: center;
+  }
+  .concert-item {
+    margin: 20px 0;
+    padding: 30px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+
+
+  /* Navbar Styles */
+.navbar {
+    background: linear-gradient(to right, gray, black);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+  
+  .navbar-logo {
+    text-decoration: none;
+  }
+  
+  .logo-content {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: gray;
+  }
+  
+  .logo-text {
+    margin-left: 10px;
+  }
+  
+  .logo-name {
+    color: yellow;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .logo-subtitle {
+    color: white;
+    font-size: 12px;
+    margin: 0;
+  }
+  
+  .navbar-menu {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar-link {
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+  }
+  
+  .mobile-menu-btn {
+    display: none; /* Show this in mobile */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+  }
+  
+  .mobile-menu {
+    display: none; /* Default to hidden, show with JS */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(to right, gray, black);
+    text-align: center;
+  }
+  
+  .mobile-menu-link {
+    color: white;
+    display: block;
+    padding: 10px;
+  }
+  
+  /* Media query to show mobile menu button on smaller screens */
+  @media (max-width: 768px) {
+    .navbar-menu {
+      display: none; /* Hide desktop menu on mobile */
+    }
+    
+    .mobile-menu-btn {
+      display: block; /* Show mobile button on mobile */
+    }
+  }
+  

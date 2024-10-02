@@ -4,81 +4,43 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Arijit Singh - Contact</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f9;
-    }
-    footer {
-      background-color: #282828;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
-
-    
-    .contact-section {
-      padding: 50px;
-      text-align: center;
-      background: url('./assets/arijit-contact.jpg') no-repeat center center/cover;
-      color: white;
-    }
-    .contact-form {
-      background-color: rgba(0, 0, 0, 0.7);
-      padding: 40px;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    .contact-form input, .contact-form textarea {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      border: none;
-      border-radius: 5px;
-    }
-    footer {
-      position: relative;
-      bottom: 0;
-      width: 100%;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <nav style="background: linear-gradient(to right, gray, black); position: sticky; top: 0; z-index: 1000;">
-      <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px;">
+    <nav class="navbar">
+      <div class="navbar-container">
         <!-- Logo and Name -->
-        <a href="index.html" style="text-decoration: none;" >
-          <div style="display: flex; align-items: center;">
-            <img src="./assets/logo.png" alt="Arijit Singh" style="width: 50px; height: 50px; border-radius: 50%; background-color: gray;">
-            <div style="margin-left: 10px;">
-              <p style="color: yellow; font-size: 18px; font-weight: bold; margin: 0;">Arijit Singh</p>
-              <p style="color: white; font-size: 12px; margin: 0;">The Voice of Emotions</p>
+        <a href="index.html" class="navbar-logo">
+          <div class="logo-content">
+            <img src="./assets/logo.png" alt="Arijit Singh" class="logo-image">
+            <div class="logo-text">
+              <p class="logo-name">Arijit Singh</p>
+              <p class="logo-subtitle">The Voice of Emotions</p>
             </div>
           </div>
         </a>
     
         <!-- Menu for Desktop -->
-        <ul id="menu-items" style="display: flex; list-style: none; gap: 15px; margin: 0; padding: 0;">
-          <li><a href="index.html" style="color: white; text-decoration: none; padding: 8px 16px; border-radius: 5px;">Home</a></li>
-          <li><a href="about.html" style="color: white; text-decoration: none; padding: 8px 16px; border-radius: 5px;">About</a></li>
-          <li><a href="concert.html" style="color: white; text-decoration: none; padding: 8px 16px; border-radius: 5px;">Concerts</a></li>
-          <li><a href="contact.html" style="color: white; text-decoration: none; padding: 8px 16px; border-radius: 5px;">Contact</a></li>
+        <ul id="menu-items" class="navbar-menu">
+          <li><a href="index.html" class="navbar-link">Home</a></li>
+          <li><a href="about.html" class="navbar-link">About</a></li>
+          <li><a href="concert.html" class="navbar-link">Concerts</a></li>
+          <li><a href="contact.html" class="navbar-link">Contact</a></li>
         </ul>
     
         <!-- Mobile Menu Toggle Button -->
-        <button id="mobile-menu-btn" style="display: none; background: none; border: none; color: white; font-size: 24px;">
+        <button id="mobile-menu-btn" class="mobile-menu-btn">
           &#9776;
         </button>
       </div>
     
       <!-- Mobile Menu -->
-      <ul id="mobile-menu" style="display: none; list-style: none; padding: 0; margin: 0; background: linear-gradient(to right, gray, black); text-align: center;">
-        <li><a href="index.html" style="color: white; display: block; padding: 10px;">Home</a></li>
-        <li><a href="about.html" style="color: white; display: block; padding: 10px;">About</a></li>
-        <li><a href="concert.html" style="color: white; display: block; padding: 10px;">Concerts</a></li>
-        <li><a href="contact.html" style="color: white; display: block; padding: 10px;">Contact</a></li>
+      <ul id="mobile-menu" class="mobile-menu">
+        <li><a href="index.html" class="mobile-menu-link">Home</a></li>
+        <li><a href="about.html" class="mobile-menu-link">About</a></li>
+        <li><a href="concert.html" class="mobile-menu-link">Concerts</a></li>
+        <li><a href="contact.html" class="mobile-menu-link">Contact</a></li>
       </ul>
     </nav>
     
@@ -112,17 +74,39 @@
     </script>
   </header>
 
-  <section class="contact-section">
-    <div class="contact-form">
-      <h1>Contact Arijit Singh</h1>
-      <form action="#">
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <textarea rows="5" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
+  <section class="contact-section" style="text-align: center; font-family: Arial, sans-serif; background-color: #f8f9fa;">
+    
+    <!-- Cover Image -->
+    <div style="width: 100%; height: 50vh; background-image: url('assets/arijit-concert.jpg'); background-size: cover; background-position: center; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);">
     </div>
-  </section>
+
+    <!-- Contact Information and Form -->
+    <div class="flex-container" style="display: flex; justify-content: space-around; flex-wrap: wrap; margin-top: 30px; gap: 20px; max-width: 1200px; margin: 20px auto;">
+
+        <!-- Contact Information -->
+        <div class="contact-info" style="flex: 1; min-width: 250px; background-color: #ffffff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+            <h4 style="font-size: 1.5rem; color: #333; margin-bottom: 15px;">For Bookings Contact</h4>
+            <p style="font-size: 1.1rem; color: #555;">1-7476460-111-825</p>
+
+            <h4 style="font-size: 1.5rem; color: #333; margin-bottom: 15px;">Customer Support</h4>
+            <p style="font-size: 1.1rem; color: #555;">contact@arijitsingh.com</p>
+            <p style="font-size: 1.1rem; color: #555;">reservations@arijitsingh.com</p>
+            <p style="font-size: 1.1rem; color: #555;">website.feedback@arijitsingh.com</p>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form" style="flex: 1; min-width: 250px; background-color: #ffffff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+            <h4 style="font-size: 1.5rem; color: #333; margin-bottom: 15px;">Send Us a Message</h4>
+            <form id="contact-form" style="display: flex; flex-direction: column;">
+                <input type="text" placeholder="Your Name" required style="padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; font-size: 1rem;">
+                <input type="email" placeholder="Your Email" required style="padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; font-size: 1rem;">
+                <textarea rows="5" placeholder="Your Message" required style="padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; font-size: 1rem;"></textarea>
+                <button type="submit" style="padding: 10px; background-color: #1a1a1a; color: #ffffff; border: none; border-radius: 4px; font-size: 1.1rem; cursor: pointer;">Send Message</button>
+            </form>
+        </div>
+    </div>
+</section>
+
 
   
   <footer style="width: 100%; background-color: #1a1a1a; color: white; padding-top: 20px;">
@@ -214,7 +198,7 @@
                 <a href="https://www.youtube.com/" target="_blank" style="color: #bbb; text-decoration: none;">
                     <i class="fab fa-youtube" style="font-size: 1.2rem;"></i>
                 </a>
-                <a href="https://www.facebook.com/" target="_blank" style="color: #bbb; text-decoration: none;">
+                <a href="https://www.facebook.com/ArijitSingh" target="_blank" style="color: #bbb; text-decoration: none;">
                     <i class="fab fa-facebook" style="font-size: 1.2rem;"></i>
                 </a>
                 <a href="https://www.instagram.com/" target="_blank" style="color: #bbb; text-decoration: none;">
