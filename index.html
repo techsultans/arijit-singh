@@ -10,22 +10,13 @@
       font-family: Arial, sans-serif;
       background-color: #f4f4f9;
     }
-    header, footer {
+    footer {
       background-color: #282828;
       color: white;
       text-align: center;
       padding: 20px;
     }
-    header {
-      position: sticky;
-      top: 0;
-    }
-    nav a {
-      margin: 0 15px;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
+   
     .hero {
       height: 100vh;
       background: url('./assets/arijit-home.jpg') no-repeat center center/cover;
@@ -47,21 +38,169 @@
 </head>
 <body>
   <header>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="concert.html">Concerts</a>
-      <a href="contact.html">Contact</a>
+    
+    <nav style="background: linear-gradient(to right, gray, black); position: sticky; top: 0; z-index: 1000;">
+      <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px;">
+        <!-- Logo and Name -->
+        <a href="index.html" style="text-decoration: none;" >
+          <div style="display: flex; align-items: center;">
+            <img src="./assets/logo.png" alt="Arijit Singh" style="width: 50px; height: 50px; border-radius: 50%; background-color: gray;">
+            <div style="margin-left: 10px;">
+              <p style="color: yellow; font-size: 18px; font-weight: bold; margin: 0;">Arijit Singh</p>
+              <p style="color: white; font-size: 12px; margin: 0;">The Voice of Emotions</p>
+            </div>
+          </div>
+        </a>
+    
+        <!-- Menu for Desktop -->
+        <ul id="menu-items" style="display: flex; list-style: none; gap: 15px; margin: 0; padding: 0;">
+          <li><a href="index.html" style="color: white; text-decoration: none; padding: 8px 16px; border-radius: 5px;">Home</a></li>
+          <li><a href="about.html" style="color: white; text-decoration: none; padding: 8px 16px; border-radius: 5px;">About</a></li>
+          <li><a href="concert.html" style="color: white; text-decoration: none; padding: 8px 16px; border-radius: 5px;">Concerts</a></li>
+          <li><a href="contact.html" style="color: white; text-decoration: none; padding: 8px 16px; border-radius: 5px;">Contact</a></li>
+        </ul>
+    
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobile-menu-btn" style="display: none; background: none; border: none; color: white; font-size: 24px;">
+          &#9776;
+        </button>
+      </div>
+    
+      <!-- Mobile Menu -->
+      <ul id="mobile-menu" style="display: none; list-style: none; padding: 0; margin: 0; background: linear-gradient(to right, gray, black); text-align: center;">
+        <li><a href="index.html" style="color: white; display: block; padding: 10px;">Home</a></li>
+        <li><a href="about.html" style="color: white; display: block; padding: 10px;">About</a></li>
+        <li><a href="concert.html" style="color: white; display: block; padding: 10px;">Concerts</a></li>
+        <li><a href="contact.html" style="color: white; display: block; padding: 10px;">Contact</a></li>
+      </ul>
     </nav>
+    
+    <script>
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const menuItems = document.getElementById('menu-items');
+    
+      // Show mobile menu when button clicked
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.style.display = mobileMenu.style.display === 'block' ? 'none' : 'block';
+      });
+    
+      // Handle screen resize
+      window.addEventListener('resize', () => {
+        if (window.innerWidth >= 768) {
+          mobileMenu.style.display = 'none'; // Hide mobile menu on desktop view
+          mobileMenuBtn.style.display = 'none'; // Hide toggle button on desktop
+          menuItems.style.display = 'flex'; // Show desktop menu
+        } else {
+          mobileMenuBtn.style.display = 'block'; // Show toggle button on mobile
+          menuItems.style.display = 'none'; // Hide desktop menu
+        }
+      });
+    
+      // Initial setup based on window size
+      if (window.innerWidth < 768) {
+        mobileMenuBtn.style.display = 'block';
+        menuItems.style.display = 'none';
+      }
+    </script>
+
   </header>
 
-  <section class="hero">
-    <div>
-      <h1>Arijit Singh</h1>
-      <p>The Voice of Emotions</p>
+  <section class="hero" style="position: relative; height: 100vh; display: flex; justify-content: center; align-items: center; overflow: hidden;">
+    <!-- Blurred Background Image -->
+    <div style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; background-image: url('./assets/arijit-home.jpg'); background-size: cover; background-position: center; filter: blur(5px); z-index: 0;"></div>
+    
+    <!-- Dark Overlay -->
+    <div style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1;"></div>
+  
+    <!-- Content (Text and Title) -->
+    <div style="position: relative; text-align: center; z-index: 2;">
+      <h1 style="font-size: 4rem; color: #FFD700; font-weight: bold; margin: 0; text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);">
+        Arijit Singh
+      </h1>
+      <p style="font-size: 1.5rem; color: #F08080; margin-top: 10px; text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);">
+        The Voice of Emotions
+      </p>
+    </div>
+  </section>  
+
+  
+
+  <section style="display: flex; justify-content: space-between; align-items: center; padding: 50px; background: linear-gradient(135deg, gray 0%, black 100%); flex-wrap: wrap; ">
+    <!-- Image of Arijit Singh -->
+    <div style="flex: 1; min-width: 300px; text-align: center;">
+      <img src="./assets/arijit-about.jpg" alt="Arijit Singh" style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+    </div>
+  
+    <!-- About Text -->
+    <div style="flex: 2; min-width: 300px; margin-left: 40px; text-align: left; color: white;">
+      <h2 style="font-size: 2.5rem; font-weight: bold; margin-bottom: 20px;">About Arijit Singh</h2>
+      <p style="font-size: 1.2rem; line-height: 1.8;">
+        Arijit Singh is one of the most soulful and versatile playback singers in the Indian music industry. Known for his heartfelt renditions and ability to convey deep emotions through his voice, Arijit has become a household name across the globe. His melodious voice has touched millions, and he is celebrated for chart-topping tracks like "Tum Hi Ho," "Channa Mereya," and "Ae Dil Hai Mushkil."
+      </p>
+      <p style="font-size: 1.2rem; line-height: 1.8;">
+        Arijit's rise to fame is a testament to his sheer talent, dedication, and love for music. With numerous awards and accolades under his belt, he continues to captivate audiences with his performances and musical brilliance.
+      </p>
     </div>
   </section>
+  
+  <!-- Responsive Design: Mobile View -->
+  <style>
+    @media (max-width: 768px) {
+      section {
+        flex-direction: column;
+        text-align: center;
+      }
+      section div {
+        margin-left: 0 !important;
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+  
+  
 
+  <section style="position: relative; width: 100%; height: 80vh; overflow: hidden;">
+    <!-- Full-Width Concert Cover Image -->
+    <div style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; background-image: url('./assets/arijit-concert.jpg'); background-size: cover; background-position: center; filter: brightness(0.7); z-index: 0;"></div>
+    
+    <!-- Dark Overlay -->
+    <div style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1;"></div>
+  
+    <!-- Concert Content -->
+    <div style="position: relative; z-index: 2; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; text-align: center; color: white;">
+      <h2 style="font-size: 3rem; font-weight: bold; margin: 0;">Live in Concert: Arijit Singh</h2>
+      <p style="font-size: 1.3rem; max-width: 700px; line-height: 1.8; margin-top: 20px; padding: 0 20px;">
+        Experience the magic of Arijit Singh live! Get ready for an unforgettable night filled with his soulful melodies and heart-touching performances. Join him on his exclusive world tour and witness the power of his voice that has captivated millions.
+      </p>
+      <!-- Join Tour Button -->
+      <a href="#join-tour" style="margin-top: 30px; padding: 12px 24px; background-color: #FFD700; color: black; font-weight: bold; font-size: 1.2rem; border-radius: 5px; text-decoration: none; transition: background-color 0.3s;">
+        Join the Tour
+      </a>
+    </div>
+  </section>
+  
+  <!-- Responsive Design: Mobile View -->
+  <style>
+    @media (max-width: 768px) {
+      section {
+        height: 60vh;
+      }
+      h2 {
+        font-size: 2rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+      a {
+        font-size: 1rem;
+        padding: 10px 20px;
+      }
+    }
+  </style>
+  
+  
+  
   <footer>
     <p>&copy; 2024 Arijit Singh. All Rights Reserved.</p>
   </footer>

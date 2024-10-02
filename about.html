@@ -10,18 +10,11 @@
       font-family: Arial, sans-serif;
       background-color: #f4f4f9;
     }
-    header, footer {
+   footer {
       background-color: #282828;
       color: white;
       text-align: center;
       padding: 20px;
-    }
-
-    nav a {
-      margin: 0 15px;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
     }
     .about-section {
       padding: 50px;
@@ -42,12 +35,72 @@
 </head>
 <body>
   <header>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="concert.html">Concerts</a>
-      <a href="contact.html">Contact</a>
+    
+    
+    <nav style="background: linear-gradient(to right, gray, black); position: sticky; top: 0; z-index: 1000;">
+      <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px;">
+        <!-- Logo and Name -->
+        <a href="index.html" style="text-decoration: none;" >
+        <div style="display: flex; align-items: center;">
+          <img src="./assets/logo.png" alt="Arijit Singh" style="width: 50px; height: 50px; border-radius: 50%; background-color: gray;">
+          <div style="margin-left: 10px;">
+            <p style="color: yellow; font-size: 18px; font-weight: bold; margin: 0;">Arijit Singh</p>
+            <p style="color: white; font-size: 12px; margin: 0;">The Voice of Emotions</p>
+          </div>
+        </div>
+      </a>
+        <!-- Menu for Desktop -->
+        <ul id="menu-items" style="display: flex; list-style: none; gap: 15px; margin: 0; padding: 0;">
+          <li><a href="index.html" style="color: white; text-decoration: none; padding: 8px 16px; border-radius: 5px;">Home</a></li>
+          <li><a href="about.html" style="color: white; text-decoration: none; padding: 8px 16px; border-radius: 5px;">About</a></li>
+          <li><a href="concert.html" style="color: white; text-decoration: none; padding: 8px 16px; border-radius: 5px;">Concerts</a></li>
+          <li><a href="contact.html" style="color: white; text-decoration: none; padding: 8px 16px; border-radius: 5px;">Contact</a></li>
+        </ul>
+    
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobile-menu-btn" style="display: none; background: none; border: none; color: white; font-size: 24px;">
+          &#9776;
+        </button>
+      </div>
+    
+      <!-- Mobile Menu -->
+      <ul id="mobile-menu" style="display: none; list-style: none; padding: 0; margin: 0; background: linear-gradient(to right, gray, black); text-align: center;">
+        <li><a href="index.html" style="color: white; display: block; padding: 10px;">Home</a></li>
+        <li><a href="about.html" style="color: white; display: block; padding: 10px;">About</a></li>
+        <li><a href="concert.html" style="color: white; display: block; padding: 10px;">Concerts</a></li>
+        <li><a href="contact.html" style="color: white; display: block; padding: 10px;">Contact</a></li>
+      </ul>
     </nav>
+    
+    <script>
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const menuItems = document.getElementById('menu-items');
+    
+      // Show mobile menu when button clicked
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.style.display = mobileMenu.style.display === 'block' ? 'none' : 'block';
+      });
+    
+      // Handle screen resize
+      window.addEventListener('resize', () => {
+        if (window.innerWidth >= 768) {
+          mobileMenu.style.display = 'none'; // Hide mobile menu on desktop view
+          mobileMenuBtn.style.display = 'none'; // Hide toggle button on desktop
+          menuItems.style.display = 'flex'; // Show desktop menu
+        } else {
+          mobileMenuBtn.style.display = 'block'; // Show toggle button on mobile
+          menuItems.style.display = 'none'; // Hide desktop menu
+        }
+      });
+    
+      // Initial setup based on window size
+      if (window.innerWidth < 768) {
+        mobileMenuBtn.style.display = 'block';
+        menuItems.style.display = 'none';
+      }
+    </script>
+
   </header>
 
   <section class="about-section">
